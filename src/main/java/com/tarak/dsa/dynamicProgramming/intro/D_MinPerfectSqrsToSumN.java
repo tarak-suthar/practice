@@ -1,6 +1,6 @@
 package com.tarak.dsa.dynamicProgramming.intro;
 
-import com.tarak.dsa.dynamicProgramming.Dp;
+import com.tarak.dsa.dynamicProgramming.Method;
 import com.tarak.util.Result;
 
 import java.util.Arrays;
@@ -14,14 +14,14 @@ public class D_MinPerfectSqrsToSumN {
 
 
     public void solution(int n) {
-        Result.print(findMinimumPerfectSquaresRequired(n, Dp.MEMOIZATION));
-        Result.print(findMinimumPerfectSquaresRequired(n, Dp.TABULATION));
+        Result.print(findMinimumPerfectSquaresRequired(n, Method.MEMOIZATION));
+        Result.print(findMinimumPerfectSquaresRequired(n, Method.TABULATION));
     }
 
     /*
     Given N return the minimum perfect squares required to make Sum N
      */
-    public int findMinimumPerfectSquaresRequired(int n, Dp type) {
+    public int findMinimumPerfectSquaresRequired(int n, Method type) {
         /*
          12 -> perfect squares in 12 are 1, 2, 3
          12 -> choose one way +
@@ -34,7 +34,7 @@ public class D_MinPerfectSqrsToSumN {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, -1);
 
-        if (type.equals(Dp.MEMOIZATION)) return memoization(n, dp);
+        if (type.equals(Method.MEMOIZATION)) return memoization(n, dp);
         else return tabulation(n);
     }
 

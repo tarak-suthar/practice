@@ -1,6 +1,6 @@
 package com.tarak.dsa.dynamicProgramming;
 
-public enum Dp {
+public enum Method {
     TABULATION,
     MEMOIZATION
 }

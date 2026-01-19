@@ -1,6 +1,6 @@
 package com.tarak.dsa.dynamicProgramming.medium;
 
-import com.tarak.dsa.dynamicProgramming.Dp;
+import com.tarak.dsa.dynamicProgramming.Method;
 import com.tarak.util.Result;
 
 public class A_UniquePathsInGrid {
@@ -32,11 +32,11 @@ public class A_UniquePathsInGrid {
     }
 
     public void solution(int[][] A) {
-        Result.print(findUniquePathsInGrid(A, Dp.TABULATION));
+        Result.print(findUniquePathsInGrid(A, Method.TABULATION));
     }
 
-    private int findUniquePathsInGrid(int[][] A, Dp type) {
-        if (type == Dp.TABULATION) return tabulation(A);
+    private int findUniquePathsInGrid(int[][] A, Method type) {
+        if (type == Method.TABULATION) return tabulation(A);
         return 0;
     }
 

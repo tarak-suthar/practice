@@ -1,6 +1,6 @@
 package com.tarak.dsa.dynamicProgramming.medium;
 
-import com.tarak.dsa.dynamicProgramming.Dp;
+import com.tarak.dsa.dynamicProgramming.Method;
 import com.tarak.util.Result;
 
 public class B_NDigitNumbers {
@@ -58,15 +58,22 @@ public class B_NDigitNumbers {
     f(4)(2) -> f(1)(1) + f(3)(1) | f(2)(1) + f(2)(1) | f(3)(1) + f(1)(1) | f(4)(1) + f(0)(1)
      */
     public void solution(int a, int b) {
-        Result.print(countNDigitNumbers(a, b, Dp.TABULATION));
+        Result.print(countNDigitNumbers(a, b, Method.TABULATION));
     }
 
-    public int countNDigitNumbers(int a, int b, Dp type) {
+    public int countNDigitNumbers(int a, int b, Method type) {
         int[] count = new int[]{0};
         /*
         how to implement DP here
         dp of [choice of number][
-
+       digits,sum
+        fn(2)(4)
+                               (sum remaining)
+                            0 1 2 3 4
+                            ----------
+          (digits      0  | 1 0 0 0 0
+           remaining)  1  | 0 1 1 1 1
+                       2  | 0 1 1 1 1
          */
         findCount(0, 0, a, b, count);
         return count[0];
